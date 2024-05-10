@@ -24,7 +24,7 @@ public class DoubleLinkedList<T> {
             tail = node.prevItem;
         }
         if (node.prevItem != null)
-        {node.prevItem.nextItem = node.prevItem;}
+        {node.prevItem.nextItem = node.nextItem;}
         if (node.nextItem != null)
         {node.nextItem.prevItem = node.prevItem;}
     }
@@ -34,6 +34,8 @@ public class DoubleLinkedList<T> {
         tail = null;
     }
 
+    //TODO create specific methods for deleting item by index/searching item by index and returning it's own data
+
     public int size() {
         int count = 0;
         Node<T> currentLink = head;
@@ -42,5 +44,16 @@ public class DoubleLinkedList<T> {
             currentLink = currentLink.nextItem;
         }
         return count;
+    }
+
+    public Node<T> findItem(T data){
+        Node<T> currentLink = head;
+        while (currentLink != null) {
+            if(currentLink.data.equals(data)){
+                return currentLink;
+            }
+            currentLink = currentLink.nextItem;
+        }
+        return null; // if we don't find any matches
     }
 }
