@@ -18,6 +18,18 @@ public class Builder {
         return this;
     }
 
+    public String getName() {
+        return this.name;
+    }
+
+    public String getType() {
+        return this.type;
+    }
+
+    public int getSize() {
+        return this.size;
+    }
+
     public Builder build(){
         return this;
     }
