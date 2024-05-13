@@ -6,3 +6,4 @@ public class BasicWheels implements Wheels {
         System.out.println("This car uses basic wheels.");
     }
 }
+
