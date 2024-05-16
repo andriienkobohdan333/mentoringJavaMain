@@ -9,12 +9,43 @@ public class Engine {
     private final int power;
     private final ProducerCoutry producer;
 
-    public Engine(String name, EngineType engineType, int power, ProducerCoutry producer){
+    public Engine(Builder builder){
         this.id = UUID.randomUUID();
-        this.name = name;
-        this.engineType = engineType;
-        this.power = power;
-        this.producer = producer;
+        this.name = builder.name;
+        this.engineType = builder.engineType;
+        this.power = builder.power;
+        this.producer = builder.producer;
+    }
+
+    public static class Builder{
+        private String name;
+        private EngineType engineType;
+        private int power;
+        private ProducerCoutry producer;
+
+        public Builder name(String name){
+            this.name = name;
+            return this;
+        }
+
+        public Builder engineType(EngineType engineType){
+            this.engineType = engineType;
+            return this;
+        }
+
+        public Builder power(int power){
+            this.power = power;
+            return this;
+        }
+
+        public Builder producer(ProducerCoutry producer){
+            this.producer = producer;
+            return this;
+        }
+
+        public Engine build() {
+            return new Engine(this);
+        }
     }
 
 

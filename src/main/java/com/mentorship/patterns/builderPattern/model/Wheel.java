@@ -6,11 +6,11 @@ public class Wheel {
     private double size;
     private boolean isWinter;
 
-    public Wheel(String brand, ProducerCoutry producer, double size, boolean isWinter) {
-        this.brand = brand;
-        this.producer = producer;
-        this.size = size;
-        this.isWinter = isWinter;
+    private Wheel(Builder builder) {
+        this.brand = builder.brand;
+        this.producer = builder.producer;
+        this.size = builder.size;
+        this.isWinter = builder.isWinter;
     }
 
     public String getBrand() {
@@ -29,19 +29,44 @@ public class Wheel {
         this.producer = producer;
     }
 
-    public double getSize() {
-        return size;
+    @Override
+    public String toString() {
+        return "Wheel{" +
+                "brand='" + brand + '\'' +
+                ", producer=" + producer +
+                ", size=" + size +
+                ", isWinter=" + isWinter +
+                '}';
     }
 
-    public void setSize(double size) {
-        this.size = size;
-    }
+    public static class Builder{
+        private String brand;
+        private ProducerCoutry producer;
+        private double size;
+        private boolean isWinter;
 
-    public boolean isWinter() {
-        return isWinter;
-    }
+        public Builder brand(String brand) {
+            this.brand = brand;
+            return this;
+        }
 
-    public void setWinter(boolean winter) {
-        isWinter = winter;
+        public Builder producer(ProducerCoutry producer) {
+            this.producer = producer;
+            return this;
+        }
+
+        public Builder size(double size) {
+            this.size = size;
+            return this;
+        }
+
+        public Builder isWinter(boolean isWinter) {
+            this.isWinter = isWinter;
+            return this;
+        }
+
+        public Wheel build() {
+            return new Wheel(this);
+        }
     }
 }
