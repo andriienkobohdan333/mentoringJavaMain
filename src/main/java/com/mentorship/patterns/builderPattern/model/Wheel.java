@@ -17,17 +17,16 @@ public class Wheel {
         return brand;
     }
 
-    public void setBrand(String brand) {
-        this.brand = brand;
-    }
-
     public ProducerCoutry getProducer() {
         return producer;
     }
-
-    public void setProducer(ProducerCoutry producer) {
-        this.producer = producer;
+    public double getSize() {
+        return size;
     }
+    public boolean getIsWinter() {
+        return isWinter;
+    }
+
 
     @Override
     public String toString() {

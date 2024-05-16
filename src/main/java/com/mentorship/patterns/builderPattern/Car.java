@@ -29,6 +29,38 @@ public class Car {
         this.transmission = builder.transmission;
     }
 
+    public UUID getId() {
+        return id;
+    }
+
+    public ProducerCoutry getProducer() {
+        return producer;
+    }
+
+    public String getModel() {
+        return model;
+    }
+
+    public LocalDate getProducedDate() {
+        return producedDate;
+    }
+
+    public int getMileage() {
+        return mileage;
+    }
+
+    public Engine getEngine() {
+        return engine;
+    }
+
+    public Wheels getWheels() {
+        return wheels;
+    }
+
+    public Transmission getTransmission() {
+        return transmission;
+    }
+
     public static class Builder{
         private ProducerCoutry producer;
         private String model;
